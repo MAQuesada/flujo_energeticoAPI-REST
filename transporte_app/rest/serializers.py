@@ -71,7 +71,8 @@ class AutocontrolDetailSerializer(serializers.ModelSerializer):
 
 
 class TarjetasSerializer(serializers.ModelSerializer):
-    t_tarjeta_asociada_a = VehiculoSerializer(read_only=True, many=True)
+    # t_tarjeta_asociada_a = VehiculoSerializer(read_only=True, many=True)
+    t_tarjeta_asociada_a = serializers.PrimaryKeyRelatedField(read_only=True, many=True)
 
     class Meta:
         model = models.Tarjetas
